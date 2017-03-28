@@ -4,7 +4,7 @@ import java.text.*;
 import java.math.*;
 import java.util.regex.*;
 
-public class Solution {
+public class BalancedBrackets {
     
     public static boolean isBalanced(String expression) {
         Stack<Character> auxStack = new Stack<Character >();
