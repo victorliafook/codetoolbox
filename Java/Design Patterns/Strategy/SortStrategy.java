@@ -1,3 +1,3 @@
 public interface SortStrategy {
-	public int sort(int[] someArray);
+	public int[] sort(int[] someArray);
 }
