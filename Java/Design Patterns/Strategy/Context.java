@@ -9,7 +9,7 @@ public class Context {
 		this.strategy = strategy;
 	}
 	
-	public int executeStrategy(int[] someArray){
+	public int[] executeStrategy(int[] someArray){
 		return strategy.sort(someArray);
 	}
 }
