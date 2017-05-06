@@ -1,8 +1,10 @@
 public class QuickFindUF{
 	private int[] data;
+	private int components;
 	
 	public QuickFindUF(int n){
 		data = new int[n];
+		components = n;
 		for(int i = 0; i < n; i++){
 			data[i] = i;
 		}
@@ -13,7 +15,8 @@ public class QuickFindUF{
 	}
 	
 	public void union(int p, int q){
-		if(data[q] != data[p]){
+		if(data[p] != data[q]){
+			components--;
 			for(int el : data){
 				if(el == data[p])
 					el = data[q]);
@@ -21,4 +24,8 @@ public class QuickFindUF{
 		}
 	}
 	
+	//number of components
+	public int count(){
+		return components;
+	}
 }

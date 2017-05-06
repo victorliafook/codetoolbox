@@ -1,8 +1,10 @@
 public class QuickUnionUF{
 	private int[] data;
+	private int components;
 	
 	public QuickUnionUF(int n){
 		data = new int[n];
+		components = n;
 		for(int i = 0; i < n; i++){
 			data[i] = i;
 		}
@@ -13,7 +15,12 @@ public class QuickUnionUF{
 	}
 	
 	public void union(int p, int q){
-		data[root(p)] = root(q);
+		int pr = root(p);
+		int qr = root(q);
+		if(pr == qr) return;
+		
+		components--;
+		data[pr] = qr;
 	}
 	
 	private int root(int p){
@@ -23,5 +30,8 @@ public class QuickUnionUF{
 		return p;
 	}
 	
-	
+	//number of components
+	public int count(){
+		
+	}
 }
